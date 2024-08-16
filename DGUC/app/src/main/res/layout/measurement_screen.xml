@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_pm2.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="60dp"
+        android:text="초미세먼지"
+        android:textColor="@color/deepskyblue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_co"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="60dp"
+        android:text="일산화탄소"
+        android:textColor="@color/deepskyblue"
+        app:layout_constraintStart_toEndOf="@+id/text_pm2.5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_so2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="60dp"
+        android:text="아황산가스"
+        android:textColor="@color/deepskyblue"
+        app:layout_constraintStart_toEndOf="@+id/text_co"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_ozone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="60dp"
+        android:text="OZONE"
+        android:textColor="@color/deepskyblue"
+        app:layout_constraintStart_toEndOf="@+id/text_so2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_pm2.5_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="75"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_pm2.5" />
+
+    <TextView
+        android:id="@+id/text_pm2.5_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="2dp"
+        android:text="㎍/m³"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_pm2.5_value"
+        app:layout_constraintStart_toEndOf="@+id/text_pm2.5_value" />
+
+    <TextView
+        android:id="@+id/text_co_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="10dp"
+        android:text="0.6"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_co" />
+
+    <TextView
+        android:id="@+id/text_co_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="2dp"
+        android:text="ppm"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_co_value"
+        app:layout_constraintStart_toEndOf="@+id/text_co_value" />
+
+    <TextView
+        android:id="@+id/text_so2_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="209dp"
+        android:layout_marginTop="10dp"
+        android:text="0.002"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_so2" />
+
+    <TextView
+        android:id="@+id/text_so2_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="2dp"
+        android:text="ppm"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_so2_value"
+        app:layout_constraintStart_toEndOf="@+id/text_so2_value" />
+
+    <TextView
+        android:id="@+id/text_ozone_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="318dp"
+        android:layout_marginTop="10dp"
+        android:text="0.012"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ozone" />
+
+    <TextView
+        android:id="@+id/text_ozone_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="2dp"
+        android:text="ppm"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_ozone_value"
+        app:layout_constraintStart_toEndOf="@+id/text_ozone_value" />
+
+    <!--<LinearLayout-->
+    <!--        android:id="@+id/linearLayout2"-->
+    <!--        android:layout_width="371dp"-->
+    <!--        android:layout_height="570dp"-->
+    <!--        android:background="@color/lightgrey"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.844">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/ms_monitoring"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="15dp"-->
+    <!--            android:text="실시간 내부 공기질 모니터링"-->
+    <!--            android:textSize="15dp" />-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/ms_relativelayout_1"-->
+    <!--            android:layout_width="350dp"-->
+    <!--            android:layout_height="60dp"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:layout_marginBottom="470dp"-->
+    <!--            android:background="@drawable/rectangle_round">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/ms_pm2.5_image"-->
+    <!--                android:layout_width="40dp"-->
+    <!--                android:layout_height="40dp"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:scaleType="centerCrop"-->
+    <!--                app:srcCompat="@drawable/pm2_5_image"-->
+    <!--                app:tint="@color/deepskyblue" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_pm2.5_text"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_marginStart="15dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="미세먼지"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="16dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_pm2.5_value"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="120dp"-->
+    <!--                android:text="DB"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="25dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_pm2.5_unit"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:text="㎍/m³"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="14dp" />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/ms_relativelayout_2"-->
+    <!--            android:layout_width="350dp"-->
+    <!--            android:layout_height="60dp"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="-457dp"-->
+    <!--            android:background="@drawable/rectangle_round">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/ms_tvoc_image"-->
+    <!--                android:layout_width="40dp"-->
+    <!--                android:layout_height="40dp"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:scaleType="centerCrop"-->
+    <!--                app:srcCompat="@drawable/tvoc_image" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_tvoc_text"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_marginStart="15dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="휘발성유기화합물"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="16dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_tvoc_value"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="60dp"-->
+    <!--                android:text="DB"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="25dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_tvoc_unit"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:text="ppb"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="14dp" />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/ms_relativelayout_3"-->
+    <!--            android:layout_width="350dp"-->
+    <!--            android:layout_height="60dp"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:background="@drawable/rectangle_round">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/ms_co2_image"-->
+    <!--                android:layout_width="40dp"-->
+    <!--                android:layout_height="40dp"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:scaleType="centerCrop"-->
+    <!--                app:srcCompat="@drawable/co2_image"-->
+    <!--                app:tint="@color/deepskyblue" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_co2_text"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_marginStart="15dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="이산화탄소"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="16dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_co2_value"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="105dp"-->
+    <!--                android:text="DB"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="25dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_co2_unit"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:text="ppm"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="14dp" />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/ms_relativelayout_4"-->
+    <!--            android:layout_width="350dp"-->
+    <!--            android:layout_height="60dp"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:background="@drawable/rectangle_round">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/ms_co_image"-->
+    <!--                android:layout_width="40dp"-->
+    <!--                android:layout_height="40dp"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                app:srcCompat="@drawable/co_image"-->
+    <!--                app:tint="@color/deepskyblue" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_co_text"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_marginStart="15dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="일산화탄소"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="16dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_co_value"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="105dp"-->
+    <!--                android:text="DB"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="25dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_co_unit"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:text="ppm"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="14dp" />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/ms_relativelayout_5"-->
+    <!--            android:layout_width="350dp"-->
+    <!--            android:layout_height="60dp"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:background="@drawable/rectangle_round">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/ms_so2_image"-->
+    <!--                android:layout_width="40dp"-->
+    <!--                android:layout_height="40dp"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:scaleType="centerCrop"-->
+    <!--                app:srcCompat="@drawable/so2_image" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_so2_text"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_marginStart="15dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="아황산가스"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="16dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_so2_value"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="105dp"-->
+    <!--                android:text="DB"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="25dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_so2_unit"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:text="ppm"-->
+    <!--                android:textColor="@color/deepskyblue"-->
+    <!--                android:textSize="14dp" />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/ms_relativelayout_6"-->
+    <!--            android:layout_width="350dp"-->
+    <!--            android:layout_height="60dp"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:background="@drawable/rectangle_round">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/ms_tmp_image"-->
+    <!--                android:layout_width="40dp"-->
+    <!--                android:layout_height="40dp"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                app:srcCompat="@drawable/tmp_image" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_tmp_text"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_marginStart="15dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="온도"-->
+    <!--                android:textColor="@color/lime"-->
+    <!--                android:textSize="16dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_tmp_value"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="148dp"-->
+    <!--                android:text="DB"-->
+    <!--                android:textColor="@color/lime"-->
+    <!--                android:textSize="25dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_tmp_unit"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:text="℃"-->
+    <!--                android:textColor="@color/lime"-->
+    <!--                android:textSize="14dp" />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/ms_relativelayout_7"-->
+    <!--            android:layout_width="350dp"-->
+    <!--            android:layout_height="60dp"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:background="@drawable/rectangle_round">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/ms_hmd_image"-->
+    <!--                android:layout_width="40dp"-->
+    <!--                android:layout_height="40dp"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                app:srcCompat="@drawable/hmd_image" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_hmd_text"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_marginStart="15dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="습도"-->
+    <!--                android:textColor="@color/lime"-->
+    <!--                android:textSize="16dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_hmd_value"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="148dp"-->
+    <!--                android:text="DB"-->
+    <!--                android:textColor="@color/lime"-->
+    <!--                android:textSize="25dp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ms_hmd_unit"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentTop="true"-->
+    <!--                android:layout_alignParentEnd="true"-->
+    <!--                android:layout_marginTop="12dp"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:text="%"-->
+    <!--                android:textColor="@color/lime"-->
+    <!--                android:textSize="14dp" />-->
+
+    <!--        </LinearLayout>-->
+
+    <!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="375dp"
+        android:layout_height="585dp"
+        android:background="@color/lightgrey"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.881">
+
+        <TextView
+            android:id="@+id/ms_monitoring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:text="실시간 내부 공기질 모니터링"
+            android:textSize="15dp" />
+
+        <ListView
+            android:id="@+id/listView_main_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="6"
+            android:fillViewport="true"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_address"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="188dp"
+        android:text="현재위치 "
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_alarm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="20dp"
+        android:text="주소(DB)"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="37dp"
+        android:text="알림설정"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_address"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

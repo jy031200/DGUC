@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.heon9u.alarm_weather_app">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 크롤링을 위함 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 현재 위치값 받기 위해 필요한 permission -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.alarmWeather"
+        tools:targetApi="31">
+        android:usesCleartextTraffic="true" >
+
+        <activity
+            android:name=".measurement_screen"
+            android:exported="false" />
+        <activity
+            android:name=".Start"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/AdMob_ID" />
+
+        <activity
+            android:name=".alarm.MainActivity"
+            android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+            android:name=".alarm.AlarmSetActivity"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".alarm.RingtoneListActivity"
+            android:theme="@style/NoActionBar" />
+        <activity android:name=".alarm.AlarmManagerActivity" />
+        <activity
+            android:name=".alarm.AlarmOnActivity"
+            android:taskAffinity="com.heon9u.alarm_weather_app.AlarmOn"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".location.LocationListView"
+            android:label="내 주소" />
+        <activity
+            android:name=".location.JusoCreateActivity"
+            android:label="주소 검색"
+            android:parentActivityName=".location.LocationListView" />
+
+        <receiver android:name=".alarm.AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.heon9u.alarm_weather_app.ALARM_START" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".anotherTools.BootReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".alarm.AlarmService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".anotherTools.BootService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

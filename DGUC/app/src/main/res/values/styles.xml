@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/kyobo_2019</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="TimePicker" parent="android:Widget.Material.TimePicker">
+        <item name="android:textSize">40dp</item>
+        <item name="android:color">@color/purple_200</item>
+        <item name="android:textColor">@color/purple_200</item>
+        <item name="android:editTextColor">@color/purple_200</item>
+        <item name="colorControlNormal">@android:color/transparent</item>
+        <item name="android:fontFamily">@font/cookierun_regular</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
