@@ -5,7 +5,7 @@
 ![image](https://github.com/user-attachments/assets/3efdd3dc-46a1-402c-9f76-45a132868dc4)
 
 - 기간:2022.09 ~ 2022.12
-- 역할: 팀원
+- 역할: 팀장
 - 기여도: 50%
 - 사용한 기술 및 도구:
     - 언어: JAVA
